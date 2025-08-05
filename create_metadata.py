@@ -15,7 +15,7 @@ with output_path.open("w", encoding="utf-8") as f:
         txt_path = jpg_path.with_suffix(".txt")
         text = txt_path.read_text(encoding="utf-8").strip()
         entry = {
-            "file_name": str(jpg_path),
+            "file_name": jpg_path.name,
             "text": text
         }
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
